@@ -1,3 +1,8 @@
+// For this problem set, I used ChatGPT mainly to help me understand the instructions in the comments.
+// I referenced the lecture notes, slides, and the lectures themselves to learn about event listeners,
+// DOM manipulation, and input validation. I also used Google for additional context.
+// All the final code, including debugging and refining, was written by me.
+
 const WORD_LENGTH = 5; // How long each guess should be
 const inputEl = document.querySelector('#guess-inp'); // The input DOM element
 
