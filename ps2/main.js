@@ -1,7 +1,7 @@
 // For this problem set, I used ChatGPT mainly to help me understand the instructions in the comments.
 // I referenced the lecture notes, slides, and the lectures themselves to learn about event listeners,
-// DOM manipulation, and input validation. I also used Google for additional context.
-// All the final code, including debugging and refining, was written by me.
+// DOM manipulation, and input validation. I also google for additional
+// help.
 
 const WORD_LENGTH = 5; // How long each guess should be
 const inputEl = document.querySelector('#guess-inp'); // The input DOM element
@@ -43,6 +43,30 @@ getRandomAnswer((answer) => {
 //             }
 //         ...
 //
+
+// show guess feedback
+function displayGuessFeedback(guess) {
+    const guessesDiv = document.querySelector("#guesses"); // where guesses show
+    const guessDiv = document.createElement("div"); // new div for guess
+    guessDiv.classList.add("guess"); // style it
+    
+    for (let i = 0; i < WORD_LENGTH; i++) {
+        const spanElem = document.createElement("span"); // new span for letter
+        spanElem.classList.add("letter");
+        spanElem.innerText = guess[i].toUpperCase();
+        
+        // color feedback
+        if (guess[i].toUpperCase() === correctAnswer[i].toUpperCase()) {
+            spanElem.classList.add("correct"); // green 🟩
+        } else if (correctAnswer.toUpperCase().includes(guess[i].toUpperCase())) {
+            spanElem.classList.add("present"); // yellow 🟨
+        } else {
+            spanElem.classList.add("absent"); // gray ⬜
+        }
+        guessDiv.appendChild(spanElem); // add letter to guess div
+    }
+    guessesDiv.appendChild(guessDiv); // show guess in list
+}
 //      2.a. If the letter is in the correct position, add the (additional) class 'correct' to the <span> element
 //      2.b. If the letter is in the answer but not in the correct position, add the (additional) class 'present' to the <span> element
 //      2.c. If the letter is not in the answer, add the (additional) class 'absent' to the <span> element
@@ -62,4 +86,36 @@ getRandomAnswer((answer) => {
 //          1.d.ii. Check if the guess is a valid word (using the isValidWord function)
 //              1.d.ii.A If the guess is a valid word, display feedback for the guess (using the displayGuessFeedback function from Step 1)
 //              1.d.ii.B If the guess is not a valid word, show an error message: "{guess} is not a valid word." (where {guess} is the value of the guess)
-// 2. When the user presses key other than 'Enter', clear the info message (using the clearInfoMessage function)
+// 2. When the user presses key other than 'Enter', clear the info message
+//    (using the clearInfoMessage function)
+// handle user input
+inputEl.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") { // check if enter
+        const guess = inputEl.value.trim().toUpperCase(); // get input
+        
+        if (guess.length !== WORD_LENGTH) { // check word size
+            showInfoMessage(`Must be ${WORD_LENGTH} letters.`);
+            return;
+        }
+        
+        if (guess === correctAnswer.toUpperCase()) { // correct guess
+            showInfoMessage(`You win! Answer: "${correctAnswer}"`);
+            inputEl.setAttribute("disabled", true); // disable input
+            return;
+        }
+        
+        inputEl.value = ""; // clear input
+        clearInfoMessage(); // clear msg
+        
+        // check if word is valid
+        isValidWord(guess, (isValid) => {
+            if (!isValid) {
+                showInfoMessage(`${guess} not a word.`);
+                return;
+            }
+            displayGuessFeedback(guess); // show guess feedback
+        });
+    } else {
+        clearInfoMessage(); // clear msg if typing
+    }
+});
