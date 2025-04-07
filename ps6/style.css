@@ -1,0 +1,159 @@
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  background: #fff9e6;
+  color: #333;
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffdd57;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin: 0.25rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: #ffd43b;
+}
+
+input[type="number"],
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  width: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.task-controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#task-input-container {
+  margin-top: 0.5rem;
+}
+
+.interval-settings label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: left;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #fff8d6;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  gap: 1rem;
+}
+
+.task-item span:first-child {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.lemon {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* blue edit button */
+.edit-btn {
+  background-color: #3a86ff;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #265df2;
+}
+
+/* red delete button */
+.delete-btn {
+  background-color: #e63946;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.cancel-btn {
+  background-color: #aaa;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #888;
+}
+
+
+#timer {
+  margin-top: 2rem;
+}
+
+#countdown {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+main.working {
+  background-color: #fff3b0;
+}
+
+main.break {
+  background-color: #d0f4de;
+}
