@@ -1,0 +1,124 @@
+/* basic page styling */
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif; /* your fave font 💅 */
+  background-color: #fefefe; /* soft white bg */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px; /* some space around the content */
+}
+
+/* section titles */
+h2 {
+  margin-bottom: 10px;
+  color: #333; /* dark gray, easier on the eyes than black */
+}
+
+/* center the whole app */
+.app-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* styling for all buttons */
+button {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4CAF50; /* green vibes */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* button hover effect */
+button:hover {
+  background-color: #45a049; /* just a slightly darker green */
+}
+
+/* styling for the rgb sliders */
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* rgb number inputs */
+input[type="number"] {
+  width: 60px; /* not too big, not too small */
+  margin-right: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 4px;
+}
+
+/* color preview + target color box */
+.color-box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #ccc; /* light border to give it shape */
+  margin: 20px auto 10px auto; /* auto horizontally centers it */
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* styling for the cheating mode checkbox */
+.cheat-toggle {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  user-select: none; /* so you don't accidentally highlight the label */
+}
+
+/* result message text */
+p {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* style just the new color button */
+.new-color-btn {
+  background-color: #f4b400; /* google-style golden yellow */
+  color: #fff;
+  margin: 20px auto 0 auto;  /* top margin, auto center horizontally */
+  display: block; /* block-level so margin auto works */
+}
+
+.new-color-btn:hover {
+  background-color: #d99900; /* slightly darker on hover */
+}
+
+/* group the sliders vertically with spacing */
+.slider-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* layout for each slider + its label */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* consistent width for the label */
+.slider-name {
+  width: 50px;
+  font-weight: bold;
+  color: #444;
+  font-size: 14px;
+}
+
+.hint-list {
+  font-size: 15px;
+  color: #444;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+
