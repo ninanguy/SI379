@@ -193,3 +193,15 @@ button {
   color: #666; /* gray color */
   font-style: italic;
 }
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reset-button, .clear-button {
+    width: 220px; /* full width on mobile */
+    margin-right: 0; /* remove extra margin */
+  }
+}
