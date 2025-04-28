@@ -197,7 +197,7 @@ button {
 @media (max-width: 600px) {
   .controls {
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
   }
 
   .reset-button, .clear-button {
